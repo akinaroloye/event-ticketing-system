@@ -1,12 +1,11 @@
 # Event Ticketing System
 
-A Java object-oriented application for managing a live events ticketing platform. The system models a hierarchy of event types (music and performance), handles ticket inventory, supports multiple payment methods, and enforces age restrictions and access control through a role-based permission model.
+A Java OOP application for a live events ticketing platform. Covers a class hierarchy for different event types, ticket inventory management, multiple payment methods, and age restrictions with role-based access control.
 
 ## Tech stack
 
 - **Java** (no external dependencies)
-- Class hierarchy with inheritance and polymorphism
-- File-backed inventory via `Stock.txt` and `UserAccounts.txt`
+- Flat-file persistence via `Stock.txt` and `UserAccounts.txt`
 
 ## Running
 
@@ -44,4 +43,4 @@ java -jar phem.jar
 
 ## What I learned
 
-Designing the class hierarchy was the most instructive part — deciding what belonged in the abstract base versus the concrete subclasses, and where the payment strategy pattern made sense over a simple conditional. The age restriction and permission system required thinking carefully about what each role should and shouldn't be able to do, which is a pattern that comes up constantly in real software. Reading and writing persistent state from flat text files without a database also highlighted why structured formats matter.
+Working out what belongs in the abstract base versus the concrete subclasses was the most instructive part, and deciding where the payment strategy pattern was actually worth using over a simple switch. The permission model required thinking carefully about what each role should and shouldn't be able to do, which comes up constantly in real software. Flat file persistence without a database is manageable at small scale but makes it obvious pretty quickly why structured formats exist.
